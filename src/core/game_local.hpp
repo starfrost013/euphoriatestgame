@@ -23,6 +23,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 // gamedll private stuff that isn't visible to server
 // 20 October 2024
 
+// Tags used for zonealloc
 #define TAG_GAME		0x6969
 
 extern edict_t* game_edicts;

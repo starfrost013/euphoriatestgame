@@ -137,13 +137,11 @@
   <ItemGroup>
     <ClInclude Include="..\..\src\shared\shared.hpp" />
     <ClInclude Include="core\game_local.hpp" />
-    <ClInclude Include="framework.h" />
     <ClInclude Include="game.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\shared\shared.cpp" />
     <ClCompile Include="core\game_interface.cpp" />
-    <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="gameplay\game_monster_flash.cpp" />
     <ClCompile Include="util\game_util.cpp" />
   </ItemGroup>

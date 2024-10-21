@@ -18,20 +18,29 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
-// game_monster_flash.c
-// Required to make the engine work for now. Obsolete.
-// 20 October 2024
 
+// game_ui_init.cpp: Initialises the GameUI interface and UI
+// 21 October 2024
 
-// this file is included in both the game dll and engine,
-// the game needs it to source shot locations, the client
-// needs it to position muzzle flashes
-// DON'T FIX THIS INCLUDE YOU WILL BREAK COMPILING!!!:
+#include <game_ui.hpp>
+#include <game/src/game.hpp>
 
-#include "../../../src/shared/shared.hpp"
+game_ui_export_t game_ui;
+game_import_t engine;
 
-constexpr vec3_t monster_flash_offset[] =
+game_ui_export_t* GameUI_Init(game_import_t game_import)
 {
-	0.0, 0.0, 0.0,				//start
-	0.0, 0.0, 0.0,				//end
-};
+	engine = game_import;
+
+	game_ui.version = GAME_UI_INTERFACE_VERSION;
+	game_ui.GameUI_Create = GameUI_Create;
+
+	engine.dprintf("******* GameUI interface initialised *******");
+}
+
+bool GameUI_Create()
+{
+	engine.dprintf("******* Creating Game UI *******");
+	engine.dprintf("******* Game UIs created *******");
+	return true; 
+}
