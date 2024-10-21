@@ -34,11 +34,11 @@ typedef struct game_ui_export_s
 	uint32_t version;
 
 	bool	(*GameUI_Create)();
-} game_ui_export_t;
+} game_ui_api_t;
 
-extern game_ui_export_t game_ui;
+extern game_ui_api_t game_ui;
 
-game_ui_export_t* GameUI_Init(game_import_t game_import);
+game_ui_api_t* GameUI_Init(engine_api_t game_import);
 bool GameUI_Create();
 
 // the actual UI creation goes here

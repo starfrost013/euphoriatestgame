@@ -26,8 +26,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include "game.hpp"
 #include "game_local.hpp"
 
-game_import_t engine;				// Functions imported from the engine.
-game_export_t game_export;			// Functions exported to the engine.
+engine_api_t engine;				// Functions imported from the engine.
+game_api_t game_export;			// Functions exported to the engine.
 
 //
 // globals
@@ -75,7 +75,7 @@ void Game_RunFrame() {};
 
 void Server_Command() {};
 
-game_export_t* Sys_GetGameAPI(game_import_t* game_import)
+game_api_t* Sys_GetGameAPI(engine_api_t* game_import)
 {
 	engine = *game_import;
 

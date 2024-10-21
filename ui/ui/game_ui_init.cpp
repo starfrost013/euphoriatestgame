@@ -25,10 +25,10 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include <game_ui.hpp>
 #include <game/src/game.hpp>
 
-game_ui_export_t game_ui;
-game_import_t engine;
+game_ui_api_t game_ui;
+engine_api_t engine;
 
-game_ui_export_t* GameUI_Init(game_import_t game_import)
+game_ui_api_t* GameUI_Init(engine_api_t game_import)
 {
 	engine = game_import;
 

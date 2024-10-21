@@ -102,7 +102,7 @@ struct edict_s
 //
 // functions provided by the main engine
 //
-typedef struct game_import_s
+typedef struct engine_api_s
 {
 	// special messages
 	void	(*bprintf)(int32_t printlevel, const char* fmt, ...);
@@ -193,12 +193,12 @@ typedef struct game_import_s
 	void	(*Cbuf_AddText)(const char* text);
 
 	void	(*DebugGraph)(float value, int32_t r, int32_t g, int32_t b, int32_t a);
-} game_import_t;
+} engine_api_t;
 
 //
 // functions exported by the game subsystem
 //
-typedef struct
+typedef struct game_api_s
 {
 	int32_t 	api_version;
 
@@ -251,9 +251,9 @@ typedef struct
 	int32_t 		edict_size;
 	int32_t 		num_edicts;		// current number, <= max_edicts
 	int32_t 		max_edicts;
-} game_export_t;
+} game_api_t;
 
-extern game_import_t engine;
-extern game_export_t game_export;
+extern engine_api_t engine;
+extern game_api_t game_export;
 
-game_export_t * Sys_GetGameAPI(game_import_t * import);
+game_api_t* Sys_GetGameAPI(engine_api_t* import);
