@@ -30,7 +30,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 #include "../../../src/shared/shared.hpp"
 
-constexpr vec3_t monster_flash_offset[] =
+vec3_t monster_flash_offset[] =
 {
 	0.0, 0.0, 0.0,				//start
 	0.0, 0.0, 0.0,				//end

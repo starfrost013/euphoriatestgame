@@ -69,27 +69,27 @@ struct gclient_s
 
 struct edict_s
 {
-	entity_state_t	s;
-	struct gclient_s* client;
-	bool	inuse;
-	int32_t 		linkcount;
+	entity_state_t		s;
+	struct gclient_s*	client;
+	bool				inuse;
+	int32_t 			linkcount;
 
 	// FIXME: move these fields to a server private sv_entity_t
-	link_t		area;				// linked to a division node or leaf
+	link_t				area;				// linked to a division node or leaf
 
-	int32_t 	num_clusters;		// if -1, use headnode instead
-	int32_t 	clusternums[MAX_ENT_CLUSTERS];
-	int32_t 	headnode;			// unused if num_clusters != -1
-	int32_t 	areanum, areanum2;
+	int32_t 			num_clusters;		// if -1, use headnode instead
+	int32_t 			clusternums[MAX_ENT_CLUSTERS];
+	int32_t 			headnode;			// unused if num_clusters != -1
+	int32_t 			areanum, areanum2;
 
 	//================================
 
-	int32_t 	svflags;			// SVF_NOCLIENT, SVF_DEADMONSTER, SVF_MONSTER, etc
-	vec3_t		mins, maxs;
-	vec3_t		absmin, absmax, size;
-	solid_t		solid;
-	int32_t 	clipmask;
-	edict_t* owner;
+	int32_t 			svflags;			// SVF_NOCLIENT, SVF_DEADMONSTER, SVF_MONSTER, etc
+	vec3_t				mins, maxs;
+	vec3_t				absmin, absmax, size;
+	solid_t				solid;
+	int32_t 			clipmask;
+	edict_t*			owner;
 
 	// the game dll can add anything it wants after
 	// this point in the structure
@@ -247,10 +247,10 @@ typedef struct game_api_s
 	// can vary in size from one game to another.
 	// 
 	// The size will be fixed when ge->Init() is called
-	struct edict_s* edicts;
-	int32_t 		edict_size;
-	int32_t 		num_edicts;		// current number, <= max_edicts
-	int32_t 		max_edicts;
+	edict_t*	edicts;
+	int32_t 	edict_size;
+	int32_t 	num_edicts;		// current number, <= max_edicts
+	int32_t 	max_edicts;
 } game_api_t;
 
 extern engine_api_t engine;

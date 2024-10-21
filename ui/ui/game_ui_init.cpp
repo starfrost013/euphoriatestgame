@@ -23,24 +23,26 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 // 21 October 2024
 
 #include <game_ui.hpp>
-#include <game/src/game.hpp>
 
 game_ui_api_t game_ui;
-engine_api_t engine;
 
-game_ui_api_t* GameUI_Init(engine_api_t game_import)
+//TODO: CREATE UI_API_T
+
+game_ui_api_t* GameUI_Init()
 {
-	engine = game_import;
+	//engine = game_import;
 
 	game_ui.version = GAME_UI_INTERFACE_VERSION;
 	game_ui.GameUI_Create = GameUI_Create;
 
-	engine.dprintf("******* GameUI interface initialised *******");
+	//engine.dprintf("------- GameUI interface initialised -------");
+
+	return &game_ui;
 }
 
 bool GameUI_Create()
 {
-	engine.dprintf("******* Creating Game UI *******");
-	engine.dprintf("******* Game UIs created *******");
+	//engine.dprintf("------- Creating Game UI -------");
+	//engine.dprintf("------- Game UIs created -------");
 	return true; 
 }

@@ -19,7 +19,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
 #pragma once
-#include <src/shared/shared.hpp>
+// DON'T FIX THIS! MULTIPLE MODULES DEPEND ON THIS FILE!
+#include "../../src/shared/shared.hpp"
 
 // game_ui.hpp
 // Game Client/UI DLL core header
@@ -36,9 +37,8 @@ typedef struct game_ui_export_s
 	bool	(*GameUI_Create)();
 } game_ui_api_t;
 
-extern game_ui_api_t game_ui;
 
-game_ui_api_t* GameUI_Init(engine_api_t game_import);
+game_ui_api_t* GameUI_Init();
 bool GameUI_Create();
 
 // the actual UI creation goes here
